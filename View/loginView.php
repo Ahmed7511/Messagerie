@@ -3,20 +3,23 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Mon blog</title>
+  
     <link href="style.css" rel="stylesheet" />
+    <?php $title = 'login'; ?>
+
+    <?php ob_start(); ?>
 </head>
 
 <body>
     <h1>Welcome to our website !</h1>
 
-    <a href="index.php">inscription</a>
+    <a href="indexView.php">signup</a>
 
 
     <form method="post" class="form-group">
         <div class="form-floating mb-3">
             <label for="floatingInput">pseudo</label><br>
-            <input type="text" class="form-control" name="pseudo" placeholder="Sidou">
+            <input type="text" class="form-control" name="pseudo" placeholder="user1">
         </div>
         <div class="form-floating">
             <label for="floatingPassword">Password</label><br>
@@ -28,5 +31,7 @@
 
 
 </body>
+<?php $content = ob_get_clean(); ?>
 
+<?php require('template.php'); ?>
 </html>

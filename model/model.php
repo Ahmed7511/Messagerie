@@ -41,7 +41,7 @@ if (isset($_POST['email'])) {
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['id'] = $response['id'];
              //redirection 
-             header('Location: home.php');
+             header('Location: ./homeView.php');
         } else {
             echo 'password non match !';
         }
@@ -67,7 +67,7 @@ function login()
         $response = $req->fetch();
         // Comparaison du pass envoyé via le formulaire avec la base
          $isPasswordCorrect = password_verify($_POST['password'], $response['pass_word']);
-    
+        
          if(!$response)
          {
             echo 'Mauvais identifiant ou mot de passe !';
@@ -81,7 +81,7 @@ function login()
                  $_SESSION['pseudo']= $_POST['pseudo'];
                    echo 'vous êtes connecté ! ';
                    
-                   header('Location: home.php');
+                  header('Location: ./View/homeView.php');
              }
              else{
                  echo 'Mauvais pseudo où mot de passe ! ';
@@ -104,7 +104,7 @@ session_start();
         
         echo '<p>welcome '.$_SESSION['pseudo'].' ' .$_SESSION['id'].'</p>';
        }else{
-           header('Location: login.php');
+           header('Location: loginView.php');
         
        }
        $see_tchat = $db->query('SELECT membres.pseudo, membres.id , messages.content, messages.date_message
