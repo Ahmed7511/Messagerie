@@ -7,7 +7,7 @@
 </head>
 <body>
     
-<a href="login.php">Login</a>
+<a href="controller/login.php">Login</a>
 <form method="post" class="center">
         <p>
 <div class="form-floating mb-3">

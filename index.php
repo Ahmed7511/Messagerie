@@ -1,6 +1,6 @@
     <?php
-require('model.php');
+require('model/signup.php');
  
 $signUp = signUp();
 
- require('indexView.php');
+ require('./View/indexView.php');

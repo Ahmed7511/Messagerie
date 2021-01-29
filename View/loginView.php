@@ -10,7 +10,7 @@
 <body>
     <h1>Welcome to our website !</h1>
 
-    <a href="index.php">inscription</a>
+    <a href="../index.php">inscription</a>
 
 
     <form method="post" class="form-group">
