@@ -9,7 +9,7 @@ session_start();
 
     if (isset($_SESSION['pseudo'])) {
         
-        echo '<p>welcome '.$_SESSION['pseudo'].' ' .$_SESSION['id'].'</p>';
+        echo '<p>welcome '.$_SESSION['pseudo'].'</p>';
        }else{
            header('Location: login.php');
         

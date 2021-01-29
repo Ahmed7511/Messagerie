@@ -5,15 +5,13 @@
     <meta charset="utf-8" />
   
     <link href="style.css" rel="stylesheet" />
-    <?php $title = 'login'; ?>
-
-    <?php ob_start(); ?>
+    <title>Login</title>
 </head>
 
 <body>
     <h1>Welcome to our website !</h1>
 
-<
+
     <a href="../index.php">inscription</a>
 
 
@@ -33,7 +31,4 @@
 
 
 </body>
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
 </html>
