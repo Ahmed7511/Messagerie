@@ -9,8 +9,10 @@
 <body>
    
 <form methode="POST">
-<label> </label><textarea name="content"></textarea>
-
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label"></label>
+  <input type="text" class="form-control" name="content" id="formGroupExampleInput2" placeholder="entrer votre message ici ">
+</div>
 <input type="submit" value="envoyer" >
 </form>
 

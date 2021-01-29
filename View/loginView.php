@@ -13,7 +13,9 @@
 <body>
     <h1>Welcome to our website !</h1>
 
-    <a href="indexView.php">signup</a>
+<
+    <a href="../index.php">inscription</a>
+
 
 
     <form method="post" class="form-group">
