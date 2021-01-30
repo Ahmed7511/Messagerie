@@ -9,7 +9,7 @@ session_start();
 
     if (isset($_SESSION['pseudo'])) {
         
-        echo '<p>welcome '.$_SESSION['pseudo'].'</p>';
+        echo '<h2>welcome <em style="color : red;"> '.$_SESSION['pseudo'].'</em> </h2>';
        }else{
            header('Location: login.php');
         
@@ -20,7 +20,7 @@ session_start();
                              ORDER BY date_message');
         
          while($post = $see_tchat->fetch()){
-      echo '<p><strong>'.$post['pseudo'].' :</strong>'.$post['content'].' <small>'.$post['date_message'].'</small></p>';
+      echo '<p ><strong>'.$post['pseudo'].' : </strong>'.$post['content'].' <small>'.$post['date_message'].'</small></p>';
          }
 
 }

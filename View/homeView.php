@@ -8,11 +8,10 @@
 </head>
 <body>
    
-<form methode="POST">
-<div class="mb-3">
+<form methode="POST" class="mb-3 px-4">
   <label for="formGroupExampleInput2" class="form-label"></label>
   <input type="text" class="form-control" name="content" id="formGroupExampleInput2" placeholder="entrer votre message ici ">
-</div>
+  <br>
 <input type="submit" value="envoyer" >
 </form>
 
