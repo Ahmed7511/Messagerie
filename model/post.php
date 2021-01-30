@@ -9,7 +9,7 @@ function post()
 
         $content = $_GET['content'] = htmlspecialchars($_GET['content']);
            if($content == ""){
-          echo "veuillez écrire un message " ;
+          echo "<em style='color : red ; '>veuillez écrire un message</em> " ;
 
            }else {
                
