@@ -17,8 +17,8 @@ if (isset($_POST['email'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']); // On rend inoffensives les balises HTML que le visiteur a pu entrer
     
     $email = htmlspecialchars($_POST['email']);
-     if (preg_match('#^[a-zA-Z0-9._-]+@[a-zA-z0-9._-]{2,}\.[a-z]{2,4}$#', $_POST['email'])) {
-        echo 'adress '.$_POST['email'].' valide !';
+     if (preg_match('#^[a-zA-Z0-9._-]+@[a-zA-z0-9._-]{2,}\.[a-z]{2,4}$#', $email)) {
+        echo ' email : '.$email.' valide !';
           
         //vérification du password 
         $_POST['password'] = htmlspecialchars($_POST['password']);
@@ -28,14 +28,15 @@ if (isset($_POST['email'])) {
             // Hachage du mot de passe
             $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
             // Insertion 
-            $req = $db->prepare('INSERT INTO membres(pseudo, email, pass_word, date_inscription) VALUES(:pseudo, :email, :pass_word, CURDATE())');
-            $req -> execute(array(
+            echo $email ;
+            $reeq = $db->prepare('INSERT INTO membres(pseudo, email, pass_word, date_inscription) VALUES(:pseudo, :email, :pass_word, CURDATE())');
+            $reeq -> execute(array(
                 'pseudo' => $pseudo,
                 'email' => $email,
                 'pass_word' => $pass_hache
             ));
                $req = $db->prepare('SELECT id, pseudo FROM membres WHERE pseudo = ?');
-               $req->execute(array($_POST['pseudo']));
+               $req->execute(array($pseudo));
     
                 $response = $req->fetch();
             //session
@@ -43,13 +44,13 @@ if (isset($_POST['email'])) {
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['id'] = $response['id'];
              //redirection 
-             header('Location: home.php');
+             header('Location: http://localhost/Messagerie/controller/home.php');
         } else {
             echo 'password non match !';
         }
 
     } else {
-        echo 'adress '.$_POST['email'].' non valide !';
+        echo 'adress '.$email.' non valide !';
     }
 }
 

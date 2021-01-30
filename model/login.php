@@ -26,7 +26,7 @@ function login()
                  $_SESSION['pseudo']= $_POST['pseudo'];
                    echo 'vous êtes connecté ! ';
                    
-                   header('Location: home.php');
+                   header('Location: http://localhost/Messagerie/controller/home.php');
              }
              else{
                  echo 'Mauvais pseudo où mot de passe ! ';
